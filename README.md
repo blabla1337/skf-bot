@@ -24,8 +24,8 @@ http://developer.gitter.im/
 
 After creation add the bot in the channel using the green Add button on the page
 
-Now you are ready to build the bot:
-```docker build -f Docker/gitter/Dockerfile . -t skf-bot-gitter --build-arg HUBOT_NAME=bot```
+Now you are ready to build the bot, we use the SKF_API_HOST for telling the bot where the Chatbot API needs to be used from:
+```docker build -f Docker/gitter/Dockerfile . -t skf-bot-gitter --build-arg HUBOT_NAME=bot --build-arg SKF_API_HOST=demo.securityknowledgeframework.org ```
 
 Now you can run the chatbot with:
 ```docker run -e "HUBOT_GITTER2_TOKEN=xoxb-paste-your-token-here" -ti  skf-bot-gitter```
@@ -39,8 +39,8 @@ https://my.slack.com/apps/A0F7XDU93-hubot
 After creation invite the hubot in the channel:
 ```/invite @bot```
 
-Now you are ready to build the bot:
-```docker build -f Docker/slack/Dockerfile . -t skf-bot-slack --build-arg HUBOT_NAME=bot```
+Now you are ready to build the bot, we use the SKF_API_HOST for telling the bot where the Chatbot API needs to be used from:
+```docker build -f Docker/slack/Dockerfile . -t skf-bot-slack --build-arg HUBOT_NAME=bot --build-arg SKF_API_HOST=demo.securityknowledgeframework.org ```
 
 Now you can run the chatbot with:
 ```docker run -e "HUBOT_SLACK_TOKEN=xoxb-paste-your-token-here" -ti  skf-bot-slack```
